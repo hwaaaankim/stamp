@@ -529,7 +529,13 @@ keyframes fadeInUp {from { opacity:0;
 	line-height:1.5;
 	font-size:1.5rem;
 }	
-
+.history-text{
+	color:black;
+	text-align:center;
+	font-size:1.2rem;
+	font-weight:600;
+	margin-top:10px;
+}
 
 
 

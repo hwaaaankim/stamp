@@ -139,51 +139,6 @@
 
 		<section id="content">
 			<div class="content-wrap">
-				 <div class="container mt-5 mb-10">
-	                <div class="title-block">
-	                    <h1>전시회 오프닝</h1>
-	                    <span># 전시회 오프닝 이미지 영역 입니다.</span>
-	                    <span># 오프라인 전시관 등 다양한 이미지를 배치할 수 있습니다.</span>
-	                </div>
-	            </div>
-				<div class="container" id="opening">
-					<div class="swiper-container-wrapper row">
-						<div class="swiper-container gallery-top col-lg-9" style="padding:0px;">
-							<div class="swiper-wrapper">
-								<div class="swiper-slide">
-									<img height="1000px" src="/front/images/new/bg01.jpg">
-								</div>
-								<div class="swiper-slide">
-									<img height="1000px" src="/front/images/new/bg01.jpg">
-								</div>
-								<div class="swiper-slide">
-									<img height="1000px" src="/front/images/new/bg01.jpg">
-								</div>
-								<div class="swiper-slide">
-									<img height="1000px" src="/front/images/new/bg01.jpg">
-								</div>
-								<div class="swiper-slide">
-									<img height="1000px" src="/front/images/new/bg01.jpg">
-								</div>
-								<div class="swiper-slide">
-									<img height="1000px" src="/front/images/new/bg01.jpg">
-								</div>
-							</div>
-							<div class="swiper-button-next"></div>
-							<div class="swiper-button-prev"></div>
-						</div>
-						<div class="swiper-container gallery-thumbs col-lg-3">
-							<div class="swiper-wrapper">
-								<div class="swiper-slide"><img height="1000px" src="/front/images/new/bg01.jpg"></div>
-								<div class="swiper-slide"><img height="1000px" src="/front/images/new/bg01.jpg"></div>
-								<div class="swiper-slide"><img height="1000px" src="/front/images/new/bg01.jpg"></div>
-								<div class="swiper-slide"><img height="1000px" src="/front/images/new/bg01.jpg"></div>
-								<div class="swiper-slide"><img height="1000px" src="/front/images/new/bg01.jpg"></div>
-								<div class="swiper-slide"><img height="1000px" src="/front/images/new/bg01.jpg"></div>
-							</div>
-						</div>
-					</div>
-				</div>
 				<div class="container mt-10 mb-10">
 	                <div class="title-block">
 	                    <h1>전시회 오프닝 멘트</h1>
@@ -230,61 +185,9 @@
 	            </div>
 			</div>
 		</section>
-
 		<th:block th:replace="/fragments/front/common :: footerSrc"></th:block>
-
 	</div>
 
 	<th:block th:replace="/fragments/front/common :: scriptSrc"></th:block>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.8.4/swiper-bundle.min.js"></script>
-	<script>
-		$(function() {
-			var galleryThumbs = new Swiper(".gallery-thumbs", {
-				centeredSlides : true,
-				centeredSlidesBounds : true,
-				direction : "horizontal",
-				spaceBetween : 10,
-				slidesPerView : 3,
-				freeMode : false,
-				watchSlidesVisibility : true,
-				watchSlidesProgress : true,
-				watchOverflow : true,
-				autoplay:{
-					delay:3000
-				},
-				breakpoints : {
-					480 : {
-						direction : "vertical",
-						slidesPerView : 3
-					}
-				}
-			});
-			var galleryTop = new Swiper(".gallery-top", {
-				direction : "horizontal",
-				spaceBetween : 10,
-				navigation : {
-					nextEl : ".swiper-button-next",
-					prevEl : ".swiper-button-prev"
-				},
-				a11y : {
-					prevSlideMessage : "Previous slide",
-					nextSlideMessage : "Next slide",
-				},
-				keyboard : {
-					enabled : true,
-				},
-				thumbs : {
-					swiper : galleryThumbs
-				}
-			});
-			galleryTop.on("slideChangeTransitionStart", function() {
-				galleryThumbs.slideTo(galleryTop.activeIndex);
-			});
-			galleryThumbs.on("transitionStart", function() {
-				galleryTop.slideTo(galleryThumbs.activeIndex);
-			});
-		});
-	</script>
 </body>
 </html>
